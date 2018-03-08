@@ -1,6 +1,9 @@
 try {
     timeout(time: 20, unit: 'MINUTES') {
         node() {
+            stage('mvn clean package') {
+                sh 'mvn clean package'
+            }
             stage('build') {
                 openshiftBuild(buildConfig: 'playground-api', showBuildLogs: 'true')
             }
