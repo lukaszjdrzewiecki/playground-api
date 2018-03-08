@@ -1,6 +1,6 @@
 try {
     timeout(time: 20, unit: 'MINUTES') {
-        node() {
+        node('maven') {
             stage('mvn clean package') {
                 sh 'mvn clean package'
             }
