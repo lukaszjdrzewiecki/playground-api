@@ -2,7 +2,7 @@ try {
     timeout(time: 20, unit: 'MINUTES') {
         node('maven') {
             stage('mvn clean package') {
-                scm checkout
+                checkout scm
                 sh 'mvn clean package'
             }
             stage('build') {
